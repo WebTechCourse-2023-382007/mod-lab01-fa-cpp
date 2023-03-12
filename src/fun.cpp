@@ -3,55 +3,44 @@
 #include <ctype.h>
 #include <cstring>
 #include <iostream>
-#include <math.h>
+#include <cmath>
 
 unsigned int faStr1(const char *str) {
     int count = 0;
-	bool isWord = false, space = true;
-	for (int i = 0; i < strlen(str); i++)
-	{
-		if (isspace(str[i]))
-		{
+    bool isWord = false, space = true;
+    for (int i = 0; i < strlen(str); i++) {
+		if (isspace(str[i])) {
 			space = true;
 			if (isWord) count++;
 			isWord = false;
-		}
-		else
-		{
+		} else {
                         if ((space && !isdigit(str[i])) || (isWord && !isdigit(str[i])))
-			    isWord = true;
-			if (isdigit(str[i]))
-			{
-			    isWord = false;
-			    space = false;
+				isWord = true;
+			if (isdigit(str[i])) {
+				isWord = false;
+				space = false;
 			}
 		}
-	}
+    }
 	if (isWord) count++;
 	return count;
 }
 
 unsigned int faStr2(const char *str) {
-    int count = 0;
+	int count = 0;
 	bool isWord = false, space = true;
-	for (int i = 0; i < strlen(str); i++)
-	{
-		if (isspace(str[i]))
-		{
+	for (int i = 0; i < strlen(str); i++) {
+		if (isspace(str[i])) {
 			space = true;
 			if (isWord) count++;
 			isWord = false;
-		}
-		else
-		{
-			if (std::isalpha(str[i]))
-			{
+		} else {
+			if (std::isalpha(str[i])) {
 				if (space && isupper(str[i]) && !isdigit(str[i])) isWord = true;
 				else
 					if (isWord && isupper(str[i]) || isWord && isdigit(str[i])) isWord = false;
 				space = false;
-			}
-			else isWord = false;
+			} else isWord = false;
 		}
 	}
 	if (isWord) count++;
@@ -59,18 +48,14 @@ unsigned int faStr2(const char *str) {
 }
 
 unsigned int faStr3(const char *str) {
-    int countWord = 0, count=0;
+	int countWord = 0, count=0;
 	bool isWord = false, space = true;
-	for (int i = 0; i < strlen(str); i++)
-	{
-		if (isspace(str[i]))
-		{
+	for (int i = 0; i < strlen(str); i++) {
+		if (isspace(str[i])) {
 			space = true;
 			if (isWord) countWord++;
 			isWord = false;
-		}
-		else
-		{
+		} else { 
 			count++;
 			isWord = true;
 		}
