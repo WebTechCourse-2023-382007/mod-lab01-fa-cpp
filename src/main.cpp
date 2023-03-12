@@ -1,8 +1,5 @@
 // Copyright 2022 UNN-IASR
 #include "fun.h"
-#include <cstring>
-#include <iostream>
-#include <cmath>
 
 int main() {
   char str[] = { " Hty gre3 ueq N   " };
