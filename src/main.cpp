@@ -1,13 +1,13 @@
 // Copyright 2022 UNN-IASR
+#include <iostream>
 #include "fun.h"
-#include <cstdio>
 int main() {
   char str[] = { " Hty gre3 ueq N   " };
   int n1, n2, n3;
   n1 = faStr1(str);
   n2 = faStr2(str);
   n3 = faStr3(str);
-  printf("%d\n", n1);
-  printf("%d\n", n2);
-  printf("%d", n3);
+std::cout << n1 << std::endl;
+std::cout << n2 << std::endl;
+std::cout << n3 << std::endl;
 }
