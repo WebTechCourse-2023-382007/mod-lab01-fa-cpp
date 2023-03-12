@@ -18,15 +18,12 @@ unsigned int faStr1(const char *str) {
 		}
 		else
 		{
-			if (std::isalpha(str[i]))
+                        if ((space && !isdigit(str[i])) || (isWord && !isdigit(str[i])))
+			    isWord = true;
+			if (isdigit(str[i]))
 			{
-				if ((space && !isdigit(str[i])) || (isWord && !isdigit(str[i])))
-					isWord = true;
-				if (isdigit(str[i]))
-				{
-					isWord = false;
-					space = false;
-				}
+			    isWord = false;
+			    space = false;
 			}
 		}
 	}
