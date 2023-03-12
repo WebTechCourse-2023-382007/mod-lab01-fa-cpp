@@ -37,8 +37,9 @@ unsigned int faStr2(const char *str) {
           } else {
              if (std::isalpha(str[i])) {
             if (space && isupper(str[i]) && !isdigit(str[i])) isWord = true;
-            else if (isWord && isupper(str[i]) || isWord && isdigit(str[i]))
-                      isWord = false;
+            else { if (isWord && isupper(str[i]) || isWord && isdigit(str[i])) {
+                    isWord = false; }
+                  }
                   space = false;
                   } else { isWord = false; }
                  }
@@ -60,6 +61,6 @@ unsigned int faStr3(const char *str) {
          }
          }
        if (isWord) countWord++;
-       //return (count + countWord / 2) / countWord;
-       return round((<float>)(count / countWord));
+       return (count + countWord / 2) / countWord;
+       //return round((<float>)(count / countWord));
 }
