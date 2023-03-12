@@ -38,7 +38,8 @@ unsigned int faStr2(const char *str) {
              if (std::isalpha(str[i])) {
             if (space && isupper(str[i]) && !isdigit(str[i])) {
                 isWord = true;
- } else { if (isWord && isupper(str[i]) || isWord && isdigit(str[i])) {
+            } else {
+             if (isWord && isupper(str[i]) || isWord && isdigit(str[i])) {
                     isWord = false; }
                         }
                   space = false;
